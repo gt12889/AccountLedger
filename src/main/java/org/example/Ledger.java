@@ -21,7 +21,7 @@ public class Ledger {
         while (run) {
 
 
-            System.out.println("Accounting Ledger");
+            System.out.println(ColorCodes.GREEN + "Accounting Ledger" + ColorCodes.RESET);
             System.out.println("-----------------------");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment");
@@ -34,15 +34,18 @@ public class Ledger {
             switch (input) {
                 case "D":
                     Transaction.addDeposit();
-                   Transaction.displayAllDeposit();
+
                     break;
 
 
                 case "P":
 
-
+                case "L":
+                case "X":
+                    run = false;
+                    break;
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println(ColorCodes.RED + "Invalid option");
                 break;
             }
 

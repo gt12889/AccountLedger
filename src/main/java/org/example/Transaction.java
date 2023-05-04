@@ -66,7 +66,7 @@ public class Transaction {
 
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
-                //split line into fields
+
                 String[] columns = line.split("\\|");
                 LocalDate date = LocalDate.parse(columns[0]);
                 LocalTime time = LocalTime.parse(columns[1]);
@@ -74,7 +74,7 @@ public class Transaction {
                 String vendor = columns[3];
                 double amount = Double.parseDouble(columns[4]);
 
-                //create ArrayList
+
                 org.yearup.Data record = new org.yearup.Data(date, time, description, vendor, amount);
             }
 
