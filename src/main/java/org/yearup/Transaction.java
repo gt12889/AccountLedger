@@ -36,14 +36,6 @@ public class Transaction {
         }
 
 
-/*        public static void showTotalBalance() {
-            BigDecimal total = BigDecimal.ZERO;
-            for (Data transaction : transactions) {
-                total = total.add(Data.getAmount());
-            }
-            System.out.println("Total Balance: " + total);
-        }*/
-
 
         private static void createTransactionFile() {
             try {
@@ -52,7 +44,7 @@ public class Transaction {
                     Files.createFile(path);
                 }
             } catch (IOException e) {
-                System.err.println("Error creating transactions file: " + e.getMessage());
+                System.out.println(ColorCodes.RED + "Error creating transactions file: " + e.getMessage() + ColorCodes.RESET);
             }
         }
 
@@ -79,7 +71,7 @@ public class Transaction {
             }
         } catch (IOException e) {
 
-            System.out.println("Error loading transactions: " + e.getMessage());
+            System.out.println(ColorCodes.RED +"Error loading transactions: " + e.getMessage() + ColorCodes.RESET);
         }
         return transactions;
     }
